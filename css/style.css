@@ -2,6 +2,9 @@
   --navbar-height: 44px;
   --navbar-background: #333232;
   --navbar-text-color: #f5f5f7;
+  --hero-background: #eaf2fc;
+  --hero-content-height: 569px;
+  --navbar-bottom-height: 52px;
 }
 
 * {
@@ -10,13 +13,38 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  background-color: #fff;
   color: #1d1d1f;
   font-style: normal;
 }
 
-html {
-  scroll-behavior: smooth;
+h2 {
+  margin-top: 15px;
+  max-width: 460px;
+
+  text-align: center;
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.002em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+a {
+  color: #06c;
+  letter-spacing: inherit;
 }
 
 .navbar__top {
@@ -45,6 +73,18 @@ html {
   letter-spacing: -0.01em;
   font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
+  color: #f5f5f7;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 8px;
+  height: 44px;
+  opacity: 0.8;
+  background: no-repeat;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  outline-offset: -7px;
 }
 
 .navbar__top ul a {
@@ -63,7 +103,135 @@ html {
 }
 
 .navbar__top .nav__link--search {
+  background-size: 15px 88px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/svg/globalnav_search_image__b5er5ngrzxqq_large.svg);
+  /* background-position: center center; TODO*/
+  background-position: 18px 0;
+  width: 15px;
 }
 
-.navbar__top .nav__link--apple {
+.navbar__top .nav__link--bag {
+  background-size: 13px 44px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(/assets/svg/globalnav_bag_image__yzte50i47ciu_large.svg);
+  width: 13px;
+}
+
+.hero {
+  background: var(--hero-background);
+  /* height: 100vh; */
+  height: var(--hero-content-height);
+  position: relative;
+  top: var(--navbar-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero .navbar__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: var(--navbar-bottom-height);
+  background-color: #e34140;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero .navbar__bottom a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.hero .navbar__bottom a:after {
+  content: "";
+  display: block;
+  padding-left: 0.3em;
+  top: 0;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero__content .apple-logo--gift {
+  text-align: center;
+  width: 54px;
+  height: 67px;
+  background-size: 54px 67px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/logo__dcojfwkzna2q_medium_2x.png);
+}
+
+.hero__content .cta-links {
+  display: inline-block;
+  margin-top: 13px;
+
+  font-size: 19px;
+  line-height: 1.21053;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.hero__content .cta-links a {
+  text-decoration: none;
+}
+
+.hero-spinners {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  z-index: 1;
+  overflow: visible;
+  flex-grow: 1;
+
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-spinners__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 21px;
+  position: absolute;
+}
+
+.hero-spinner-1 .unit-image {
+  width: 289px;
+  height: 281px;
+  background-size: 289px 281px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/iphone__cyamwsdph26a_medium_2x.png);
+}
+
+.hero-spinner-2 .unit-image {
+  width: 289px;
+  height: 281px;
+  background-size: 289px 281px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/airpods__b0941p5gmwj6_medium_2x.png);
+}
+
+.hero-spinner-3 .unit-image {
+  width: 289px;
+  height: 281px;
+  background-size: 289px 281px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/ipad__bq6djchifrbm_medium_2x.png);
 }
