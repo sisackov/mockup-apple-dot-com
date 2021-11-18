@@ -1,0 +1,55 @@
+:root {
+  --navbar-height: 44px;
+  --navbar-background: #333232;
+  --navbar-text-color: #f5f5f7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #1d1d1f;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--navbar-height);
+  position: fixed;
+  background: var(--navbar-background);
+  color: var(--navbar-text-color);
+  padding: 1rem;
+}
+
+.navbar__top ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar__top ul li {
+  font-size: 12px;
+  line-height: 3.66667;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+.navbar__top ul a {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
