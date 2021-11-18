@@ -4,7 +4,7 @@
   --navbar-text-color: #f5f5f7;
   --hero-background: #eaf2fc;
   --hero-content-height: 569px;
-  --navbar-bottom-height: 52px;
+  --navbar-bottom-height: 120px;
   --content-height: 569px;
   --columns: 1;
   --gutter-width: 12px;
@@ -332,10 +332,44 @@ body {
   background-image: url(/assets/img/tile_homepod_mini__b73w4z3ljymu_medium_2x.jpg);
 }
 
+.section-4 .section-4-right__content .logo-image-watch {
+  width: 146px;
+  height: 56px;
+  background-size: 146px 56px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/tile_watch_logo_lte__h7snssb7mqq2_medium_2x.png);
+  background-position: center;
+}
+
 .unit-image-wrapper .unit-image--section-4-right {
   width: 590px;
   height: 580px;
   background-size: 590px 580px;
   background-repeat: no-repeat;
   background-image: url(/assets/img/tile_watch__e9n11b6m6yq2_medium_2x.jpg);
+}
+
+.section-5 .section-5-left__content .logo-image-card {
+  width: 146px;
+  height: 56px;
+  background-size: 146px 56px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/tile__cauwwcyyn9hy_medium_2x.jpg);
+  background-position: center;
+}
+
+.unit-image-wrapper .unit-image--section-5-left {
+  width: 750px;
+  height: 580px;
+  background-size: 750px 580px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/tile_homepod_mini__b73w4z3ljymu_medium_2x.jpg);
+}
+
+.unit-image-wrapper .unit-image--section-5-right {
+  width: 590px;
+  height: 580px;
+  background-size: 590px 580px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/promo_dickinson__c9ea4l2f5rki_medium_2x.jpg);
 }

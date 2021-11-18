@@ -124,3 +124,7 @@ figure {
 .section__content--grow-1 {
   flex-grow: 1;
 }
+
+.logo-image {
+  margin: 0 auto;
+}
