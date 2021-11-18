@@ -120,3 +120,7 @@ figure {
   color: var(--text-color);
   padding-top: 44px;
 }
+
+.section__content--grow-1 {
+  flex-grow: 1;
+}
