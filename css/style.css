@@ -231,6 +231,10 @@ body {
   background-image: url(/assets/img/ipad__bq6djchifrbm_medium_2x.png);
 }
 
+.section-1 {
+  background: #fbfbfd;
+}
+
 .unit-image-wrapper .unit-image--section-1 {
   z-index: 1;
   width: 1200px;
@@ -238,4 +242,38 @@ body {
   background-size: 1200px 624px;
   background-repeat: no-repeat;
   background-image: url(/assets/img/hero_iphone_13pro__dhnsegysa42u_medium_2x.jpg);
+}
+
+.section-2 {
+  background: #32283b;
+  height: 624px;
+}
+
+.section-2 .section__content {
+  justify-content: flex-start;
+}
+.section-2 .section__title {
+  color: #f5f5f7;
+}
+
+.section-2 .section__subtitle {
+  color: #fec2eb;
+}
+
+.unit-image-wrapper .unit-image--section-2 {
+  z-index: 1;
+  width: 1200px;
+  height: 624px;
+  background-size: 1200px 624px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/hero_iphone_13__f194u1rdooeq_medium_2x.jpg);
+}
+
+.unit-image-wrapper .unit-image--section-2 {
+  z-index: 1;
+  width: 1200px;
+  height: 624px;
+  background-size: 1200px 624px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/hero_iphone_13__f194u1rdooeq_medium_2x.jpg);
 }
