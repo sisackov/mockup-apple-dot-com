@@ -5,6 +5,17 @@
   --hero-background: #eaf2fc;
   --hero-content-height: 569px;
   --navbar-bottom-height: 52px;
+  --content-height: 569px;
+  --columns: 1;
+  --gutter-width: 12px;
+  --gutter-half-width: 6px;
+  --gutter-and-half-width: 18px;
+  --gutter-color: #fff;
+  --double-edge-border-width: 0px;
+  --edge-border-width: 0px;
+  --background-color: #fbfbfd;
+  --text-color: #1d1d1f;
+  --edge-border-width-fallback: 0px;
 }
 
 * {
@@ -29,25 +40,8 @@ body {
   font-style: normal;
 }
 
-h2 {
-  margin-top: 15px;
-  max-width: 460px;
-
-  text-align: center;
-  font-size: 48px;
-  line-height: 1.08349;
-  font-weight: 600;
-  letter-spacing: -0.002em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
-}
-
-a {
-  color: #06c;
-  letter-spacing: inherit;
-}
-
 .navbar__top {
+  z-index: 55;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +115,7 @@ a {
 
 .hero {
   background: var(--hero-background);
-  /* height: 100vh; */
+  /* todo */
   height: var(--hero-content-height);
   position: relative;
   top: var(--navbar-height);
@@ -129,6 +123,7 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  z-index: 50;
 }
 
 .hero .navbar__bottom {
@@ -234,4 +229,13 @@ a {
   background-size: 289px 281px;
   background-repeat: no-repeat;
   background-image: url(/assets/img/ipad__bq6djchifrbm_medium_2x.png);
+}
+
+.unit-image-wrapper .unit-image--section-1 {
+  z-index: 1;
+  width: 1200px;
+  height: 624px;
+  background-size: 1200px 624px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/hero_iphone_13pro__dhnsegysa42u_medium_2x.jpg);
 }

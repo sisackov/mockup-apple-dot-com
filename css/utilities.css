@@ -1,0 +1,128 @@
+.unit-image-wrapper {
+}
+
+h2 {
+  margin-top: 15px;
+  max-width: 460px;
+
+  text-align: center;
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.002em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+a {
+  color: #06c;
+  letter-spacing: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a.unit-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: inherit; */
+  z-index: 3;
+}
+
+.section__title {
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.002em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.section__subtitle {
+  margin-top: 5px;
+  font-size: 24px;
+  line-height: 1.16667;
+  font-weight: 400;
+  letter-spacing: 0.009em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.cta-links {
+  margin-top: 15px;
+  font-size: 19px;
+  line-height: 1.21053;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.cta-links .cta-links__link {
+  margin-right: 15px;
+}
+
+.unit-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: visible;
+  flex-grow: 1;
+}
+
+figure {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+}
+
+.unit-image {
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  /* top: auto;
+  position: absolute;
+  border: 0;
+  left: calc(50% + 0px);
+  right: auto;
+  bottom: 0px;
+  transform: translateX(-50%); */
+}
+
+/* Sections */
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  height: var(--hero-content-height);
+}
+
+.section__content {
+  top: 40px;
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 40px 0;
+  z-index: 5;
+
+  overflow: hidden;
+  /* background-color: var(--background-color); */
+  color: var(--text-color);
+  padding-top: 44px;
+}
