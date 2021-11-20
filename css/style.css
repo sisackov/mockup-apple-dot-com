@@ -423,6 +423,13 @@ body {
   text-decoration: none;
 }
 
-.footer-lists__container .footer-list__column .footer-list__column--link:hover {
-  text-decoration: underline;
+.footer__content-bottom {
+  padding-top: 34px;
+  border-top: none;
+}
+
+.footer-content-bottom__shop {
+}
+
+.footer-content-bottom__shop .nowrap {
 }

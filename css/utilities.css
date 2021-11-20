@@ -176,3 +176,8 @@ figure {
 hr {
   border: 0.001em solid #d2d2d7;
 }
+
+footer .footer__content a:hover,
+footer .footer__content .footer-lists__container a:hover {
+  text-decoration: underline;
+}
