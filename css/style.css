@@ -231,6 +231,8 @@ body {
   background-image: url(/assets/img/ipad__bq6djchifrbm_medium_2x.png);
 }
 
+/** TODO old sections  START*/
+
 .section-1 {
   background: #fbfbfd;
 }
@@ -259,15 +261,6 @@ body {
 
 .section-2 .section__subtitle {
   color: #fec2eb;
-}
-
-.unit-image-wrapper .unit-image--section-2 {
-  /* z-index: 1; */
-  width: 1200px;
-  height: 624px;
-  background-size: 1200px 624px;
-  background-repeat: no-repeat;
-  background-image: url(/assets/img/hero_iphone_13__f194u1rdooeq_medium_2x.jpg);
 }
 
 .unit-image-wrapper .unit-image--section-2 {
@@ -372,4 +365,64 @@ body {
   background-size: 590px 580px;
   background-repeat: no-repeat;
   background-image: url(/assets/img/promo_dickinson__c9ea4l2f5rki_medium_2x.jpg);
+}
+
+/** TODO old sections  END*/
+
+.hero,
+.grid__links {
+  display: none;
+}
+
+.footer-lists__container {
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
+    "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 20px;
+}
+
+.footer-list__column {
+  flex-basis: 25%;
+  font-size: 1em;
+  box-sizing: content-box;
+}
+
+.footer-list__column--title {
+  /*!maybe duplicate*/
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
+    "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
+  margin-right: 20px;
+  margin-bottom: 0.8em;
+
+  color: #1d1d1f;
+}
+
+.footer-lists__container .footer-list__column .footer-list__column--ul {
+  margin-right: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-lists__container .footer-list__column .footer-list__column--item {
+  display: block;
+  margin-bottom: 0.8em;
+}
+
+.footer-lists__container .footer-list__column .footer-list__column--link {
+  color: #424245;
+  text-decoration: none;
+}
+
+.footer-lists__container .footer-list__column .footer-list__column--link:hover {
+  text-decoration: underline;
 }
