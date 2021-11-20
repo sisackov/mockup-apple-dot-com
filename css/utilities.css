@@ -1,6 +1,3 @@
-.unit-image-wrapper {
-}
-
 h2 {
   margin-top: 15px;
   max-width: 460px;
@@ -144,7 +141,7 @@ figure {
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
+  font-family: "SF Pro Text", "Myriad Set Pro Regular", "SF Pro Icons",
     "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
   background: var(--footer-background);
