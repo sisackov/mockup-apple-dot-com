@@ -1,14 +1,12 @@
 :root {
   /*TODO*/
   --navbar-height: 44px;
-  --global-nav-collective-height: 44px;
   --navbar-background: #333232;
   --navbar-text-color: #f5f5f7;
   --hero-background: #eaf2fc;
   --hero-content-height: 569px;
   --navbar-bottom-height: 90px;
   --content-height: 569px;
-  --columns: 1;
   --gutter-width: 12px;
   --gutter-half-width: 6px;
   --gutter-and-half-width: 18px;
@@ -26,7 +24,6 @@
   --footer-directory-title-color-hover: #000;
   --footer-mini-shop-link-color: #06c;
   --content-height: 580px;
-  --columns: 1;
 }
 
 * {
@@ -132,7 +129,7 @@ body {
   position: relative;
   max-width: 2560px;
   margin: 0 auto;
-  padding-top: var(--global-nav-collective-height);
+  padding-top: var(--navbar-height);
 }
 
 .main .collection-module {
@@ -152,12 +149,12 @@ body {
   text-decoration: underline;
 }
 
-.main [data-module-template]:nth-child(1),
-.main [data-unit-id]:nth-child(1) {
+.main .data-module:nth-child(1),
+.main .data-unit:nth-child(1) {
   z-index: 42;
 }
 
-.main [data-module-template].collection-module [data-unit-id] {
+.main .data-module.collection-module .data-unit {
   box-sizing: border-box;
   position: relative;
   padding-top: 0px;
@@ -167,7 +164,7 @@ body {
   border-right-width: 0px;
 }
 
-.main [data-module-template="ribbon"] [data-unit-id="holiday"] {
+.main .ribbon-section .holiday {
   background-color: #e34140;
   display: grid;
   width: 100%;
@@ -187,77 +184,58 @@ body {
   max-width: 100%;
 }
 
-.main [data-module-template="ribbon"] [data-unit-id="holiday"] p {
+.main .ribbon-section .holiday p {
   padding: 12px 0;
 }
 
-.main [data-module-template="ribbon"] [data-unit-id="holiday"] p,
-.main [data-module-template="ribbon"] [data-unit-id="holiday"] a {
+.main .ribbon-section .holiday p,
+.main .ribbon-section .holiday a {
   color: #fff;
   font-size: 14px;
 }
 
-.main [data-module-template="heroes"].collection-module {
+.main .heroes-section.collection-module {
   background-color: var(--gutter-color);
   grid-gap: var(--gutter-width);
-  grid-template-columns: repeat(var(--columns), 1fr);
-  width: calc(100% - var(--double-edge-border-width));
-  left: calc(var(--edge-border-width));
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
   border-bottom: var(--gutter-width) solid var(--gutter-color);
 }
 
-.body-with-ribbon
-  [data-module-template="heroes"]
-  [data-unit-id]:first-child
-  .module-content,
-.body-with-ribbon
-  [data-module-template="heroes"]
-  [data-unit-id]:first-child
-  .unit-wrapper {
+.body-with-ribbon .heroes-section .data-unit:first-child .module-content,
+.body-with-ribbon .heroes-section .data-unit:first-child .unit-wrapper {
   height: var(--content-height);
 }
 
-.main
-  [data-module-template="heroes"].collection-module
-  [data-unit-id]
-  .module-content {
+.main .heroes-section.collection-module .data-unit .module-content {
   color: var(--text-color);
   background-color: var(--background-color);
-  padding-top: var(--global-nav-collective-height);
-  height: calc(var(--content-height) + var(--global-nav-collective-height));
+  padding-top: var(--navbar-height);
+  height: calc(var(--content-height) + var(--navbar-height));
 }
 
-.main [data-module-template="heroes"] [data-unit-id],
-.main [data-module-template="heroes"] .module-content {
+.main .heroes-section .data-unit,
+.main .heroes-section .module-content {
   height: 580px;
 }
 
-.main [data-module-template="heroes"] [data-unit-id],
-.main [data-module-template="heroes"] .module-content {
+.main .heroes-section .data-unit,
+.main .heroes-section .module-content {
   width: 100%;
 }
 
-.body-with-ribbon
-  [data-module-template="heroes"]
-  [data-unit-id]:first-child
-  .module-content,
-.body-with-ribbon
-  [data-module-template="heroes"]
-  [data-unit-id]:first-child
-  .unit-wrapper {
+.body-with-ribbon .heroes-section .data-unit:first-child .module-content,
+.body-with-ribbon .heroes-section .data-unit:first-child .unit-wrapper {
   height: var(--content-height);
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-wrapper.bg-set-c {
+.main .heroes-section .holiday-2021 .unit-wrapper.bg-set-c {
   background-color: #eeeffe;
 }
 
-[data-module-template] [data-unit-id] .unit-wrapper {
-  top: calc(var(--global-nav-collective-height) * -1);
-  height: calc(var(--content-height) + var(--global-nav-collective-height));
+.data-module .data-unit .unit-wrapper {
+  top: calc(var(--navbar-height) * -1);
+  height: calc(var(--content-height) + var(--navbar-height));
   position: relative;
   display: flex;
   flex-direction: column;
@@ -266,14 +244,11 @@ body {
   background-color: rgb(251, 251, 253);
 }
 
-.main
-  [data-module-template="heroes"].collection-module
-  [data-unit-id]
-  .module-content {
+.main .heroes-section.collection-module .data-unit .module-content {
   color: var(--text-color);
 }
 
-[data-module-template] [data-unit-id] .unit-wrapper a.unit-link {
+.data-module .data-unit .unit-wrapper a.unit-link {
   position: absolute;
   top: 0;
   left: 0;
@@ -282,42 +257,29 @@ body {
   z-index: 3;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-copy-wrapper,
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-image-wrapper {
+.main .heroes-section .holiday-2021 .unit-copy-wrapper,
+.main .heroes-section .holiday-2021 .unit-image-wrapper {
   background-color: #eeeffe;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-copy-wrapper {
+.main .heroes-section .holiday-2021 .unit-copy-wrapper {
   padding-top: 29px;
 }
 
-.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper {
+.main .heroes-section .data-unit .unit-copy-wrapper {
   text-align: center;
   padding-top: 47px;
 }
 
-[data-module-template] [data-unit-id] .unit-wrapper .unit-copy-wrapper {
+.data-module .data-unit .unit-wrapper .unit-copy-wrapper {
   position: relative;
   flex-grow: 0;
   z-index: 4;
   pointer-events: none;
-  margin-top: var(--global-nav-collective-height);
+  margin-top: var(--navbar-height);
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-copy-wrapper
-  .apple-logo {
+.main .heroes-section .holiday-2021 .unit-copy-wrapper .apple-logo {
   width: 70px;
   height: 88px;
   background-size: 70px 88px;
@@ -326,19 +288,11 @@ body {
   margin: 0 auto;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-copy-wrapper
-  .headline {
+.main .heroes-section .holiday-2021 .unit-copy-wrapper .headline {
   margin-top: 20px;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  > .headline {
+.main .heroes-section .data-unit .unit-copy-wrapper > .headline {
   font-size: 56px;
   line-height: 1.07143;
   font-weight: 600;
@@ -347,29 +301,17 @@ body {
     "Arial", sans-serif;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-copy-wrapper
-  .cta-links {
+.main .heroes-section .holiday-2021 .unit-copy-wrapper .cta-links {
   margin-top: 9px;
 }
-.main
-  [data-module-template="heroes"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  > .cta-links {
+.main .heroes-section .data-unit .unit-copy-wrapper > .cta-links {
   position: relative;
   z-index: 4;
   text-decoration: none;
 }
 
-.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper > .cta,
-.main
-  [data-module-template="heroes"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  > .cta-links {
+.main .heroes-section .data-unit .unit-copy-wrapper > .cta,
+.main .heroes-section .data-unit .unit-copy-wrapper > .cta-links {
   display: inline-block;
   font-size: 21px;
   line-height: 1.381;
@@ -380,20 +322,19 @@ body {
   margin-top: 0.65em;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-image-wrapper {
+.main .heroes-section .holiday-2021 .unit-image-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
 }
-[data-module-template] [data-unit-id] .unit-wrapper .unit-image-wrapper {
+
+.data-module .data-unit .unit-wrapper .unit-image-wrapper {
   z-index: 1;
   overflow: visible;
   flex-grow: 1;
 }
-.main [data-module-template="heroes"] .unit-image-wrapper {
+
+.main .heroes-section .unit-image-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -401,23 +342,15 @@ body {
   width: 100%;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-wrapper.bg-set-c
-  .set-c {
+.main .heroes-section .holiday-2021 .unit-wrapper.bg-set-c .set-c {
   display: flex;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-image-wrapper
-  .unit-image-container {
+.main .heroes-section .holiday-2021 .unit-image-wrapper .unit-image-container {
   position: absolute;
 }
 
-.main [data-module-template="heroes"] .unit-image-wrapper {
+.main .heroes-section .unit-image-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -425,27 +358,23 @@ body {
   width: 100%;
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
-  .unit-image-wrapper
-  .unit-image-container {
+.main .heroes-section .holiday-2021 .unit-image-wrapper .unit-image-container {
   justify-content: center;
   align-items: center;
   margin-top: 26px;
 }
 
 .main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
+  .heroes-section
+  .holiday-2021
   .unit-image-wrapper:not(.pause)
   .unit-image-animate {
   animation: rotate 4s 0.125s ease-in-out forwards;
 }
 
 .main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
+  .heroes-section
+  .holiday-2021
   .unit-image-wrapper
   .unit-image-container
   .unit-image-animate
@@ -455,8 +384,8 @@ body {
 }
 
 .main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
+  .heroes-section
+  .holiday-2021
   .unit-image-wrapper
   .unit-image-container
   .unit-image-animate
@@ -465,7 +394,7 @@ body {
   position: relative;
 }
 
-[data-module-template] [data-unit-id] .unit-image {
+.data-module .data-unit .unit-image {
   z-index: 1;
   position: absolute;
   border: 0;
@@ -479,8 +408,8 @@ body {
 }
 
 .main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
+  .heroes-section
+  .holiday-2021
   .unit-image-wrapper
   .unit-image-container.set-c
   .unit-image-macbook
@@ -493,8 +422,8 @@ body {
 }
 
 .main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
+  .heroes-section
+  .holiday-2021
   .unit-image-wrapper
   .unit-image-container.set-c
   .unit-image-ipadmini
@@ -507,8 +436,8 @@ body {
 }
 
 .main
-  [data-module-template="heroes"]
-  [data-unit-id="holiday-2021"]
+  .heroes-section
+  .holiday-2021
   .unit-image-wrapper
   .unit-image-container.set-c
   .unit-image-ipadair
@@ -524,6 +453,7 @@ body {
 .icon::after,
 .more::before,
 .more::after {
+  /* TODO */
   font-family: "SF Pro Icons";
   color: inherit;
   display: inline-block;
@@ -536,16 +466,12 @@ body {
   z-index: 1;
 }
 
-.body-with-ribbon
-  [data-module-template="heroes"].collection-module
-  [data-unit-id],
-.body-with-ribbon
-  [data-module-template="promos"].collection-module
-  [data-unit-id] {
+.body-with-ribbon .heroes-section.collection-module .data-unit,
+.body-with-ribbon .promos-section.collection-module .data-unit {
   top: initial;
 }
 
-.main [data-module-template="heroes"].collection-module [data-unit-id] {
+.main .heroes-section.collection-module .data-unit {
   border-color: var(--gutter-color);
   background-color: var(--gutter-color);
   border-bottom-width: 12px;
@@ -555,7 +481,7 @@ body {
 }
 
 .main
-  [data-module-template="heroes"]
+  .heroes-section
   .unit-image-wrapper
   .unit-image.unit-image-iphone-13-pro-hero-iphone-13pro {
   width: 3010px;
@@ -566,7 +492,7 @@ body {
 }
 
 .main
-  [data-module-template="heroes"]
+  .heroes-section
   .unit-image-wrapper
   .unit-image.unit-image-iphone-13-hero-iphone-13 {
   width: 3008px;
@@ -576,9 +502,8 @@ body {
   background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_large.jpg");
 }
 
-.main [data-module-template="promos"] {
+.main .promos-section {
   --content-height: 580px;
-  --columns: 2;
   --gutter-width: 12px;
   --gutter-half-width: 6px;
   --gutter-and-half-width: 18px;
@@ -590,10 +515,10 @@ body {
   --edge-border-width-fallback: 12px;
 }
 
-.main [data-module-template="promos"].collection-module {
+.main .promos-section.collection-module {
   background-color: var(--gutter-color);
   grid-gap: var(--gutter-width);
-  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-columns: repeat(2, 1fr);
   width: calc(
     100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
       var(--safe-area-inset-rt)
@@ -602,21 +527,14 @@ body {
   border-bottom: var(--gutter-width) solid var(--gutter-color);
 }
 
-.main
-  [data-module-template="promos"].collection-module
-  [data-unit-id]
-  .module-content {
+.main .promos-section.collection-module .data-unit .module-content {
   color: var(--text-color);
   background-color: var(--background-color);
-  padding-top: var(--global-nav-collective-height);
-  height: calc(var(--content-height) + var(--global-nav-collective-height));
+  padding-top: var(--navbar-height);
+  height: calc(var(--content-height) + var(--navbar-height));
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  .headline {
+.main .promos-section .data-unit .unit-copy-wrapper .headline {
   font-size: 40px;
   line-height: 1.1;
   font-weight: 600;
@@ -626,26 +544,14 @@ body {
   margin-top: 53px;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  .headline,
-.main
-  [data-module-template="promos"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  .subhead,
-.main [data-module-template="promos"] [data-unit-id] .unit-copy-wrapper .cta {
+.main .promos-section .data-unit .unit-copy-wrapper .headline,
+.main .promos-section .data-unit .unit-copy-wrapper .subhead,
+.main .promos-section .data-unit .unit-copy-wrapper .cta {
   width: 88%;
   max-width: 430px;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  .subhead {
+.main .promos-section .data-unit .unit-copy-wrapper .subhead {
   font-size: 21px;
   line-height: 1.2381;
   font-weight: 400;
@@ -655,38 +561,21 @@ body {
   margin-top: 4px;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="macbook-pro"]
-  .no-avail
-  .unit-copy-wrapper
-  .cta-links {
+.main .promos-section .macbook-pro .no-avail .unit-copy-wrapper .cta-links {
   margin-top: 0.7em;
 }
-.main
-  [data-module-template="promos"]
-  [data-unit-id="macbook-pro"]
-  .unit-copy-wrapper
-  .cta-links {
+.main .promos-section .macbook-pro .unit-copy-wrapper .cta-links {
   margin-top: 4px;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  .cta-links {
+.main .promos-section .data-unit .unit-copy-wrapper .cta-links {
   position: relative;
   z-index: 4;
   text-decoration: none;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  .cta-links,
-.main [data-module-template="promos"] [data-unit-id] .unit-copy-wrapper .cta {
+.main .promos-section .data-unit .unit-copy-wrapper .cta-links,
+.main .promos-section .data-unit .unit-copy-wrapper .cta {
   font-size: 17px;
   line-height: 1.23536;
   font-weight: 400;
@@ -698,7 +587,7 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
+  .promos-section
   .unit-image-wrapper
   .unit-image.unit-image-macbook-pro-tile-macbookpro {
   width: 1262px;
@@ -709,15 +598,15 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
-  [data-unit-id="watch-series-7"]
+  .promos-section
+  .watch-series-7
   .unit-copy-wrapper
   .violator-frameless-reduced {
   margin-top: 31px;
 }
 .main
-  [data-module-template="promos"]
-  [data-unit-id="watch-series-7"]
+  .promos-section
+  .watch-series-7
   .violator-frameless.violator-frameless-reduced {
   font-size: 12px;
   line-height: 1.33337;
@@ -733,28 +622,18 @@ body {
   display: block;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="watch-series-7"]
-  .violator-frameless {
+.main .promos-section .watch-series-7 .violator-frameless {
   box-sizing: border-box;
   white-space: nowrap;
   display: block;
   color: #bf4800;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="watch-series-7"]
-  .unit-copy-wrapper
-  .headline {
+.main .promos-section .watch-series-7 .unit-copy-wrapper .headline {
   margin-top: 8px;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="watch-series-7"]
-  .unit-copy-wrapper {
+.main .promos-section .watch-series-7 .unit-copy-wrapper {
   text-align: center;
 }
 
@@ -768,7 +647,7 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
+  .promos-section
   .unit-image-wrapper
   .unit-image.unit-image-watch-series-7-tile-watch {
   width: 1262px;
@@ -779,7 +658,7 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
+  .promos-section
   .unit-image-wrapper
   .unit-image.unit-image-homepod-mini-tile-homepod-mini {
   width: 1262px;
@@ -789,19 +668,11 @@ body {
   background-image: url("https://www.apple.com/v/home/ah/images/promos/homepod-mini/tile_homepod_mini__b73w4z3ljymu_large.jpg");
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="arcade-lego-castaways"]
-  .unit-copy-wrapper
-  .headline {
+.main .promos-section .arcade-lego-castaways .unit-copy-wrapper .headline {
   margin-top: 57px;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="arcade-lego-castaways"]
-  .unit-copy-wrapper
-  .subhead {
+.main .promos-section .arcade-lego-castaways .unit-copy-wrapper .subhead {
   margin-top: 10px;
   max-width: 400px;
 }
@@ -816,7 +687,7 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
+  .promos-section
   .unit-image-wrapper
   .unit-image.unit-image-arcade-lego-castaways-tile-lego-castaways {
   width: 1262px;
@@ -826,15 +697,11 @@ body {
   background-image: url("https://www.apple.com/v/home/ah/images/promos/arcade-lego-castaways/tile_lego_castaways__d2v36ez91ewm_large.jpg");
 }
 
-.main [data-module-template="promos"] [data-unit-id="apple-card"] .background {
+.main .promos-section .apple-card .background {
   background: #fbfbfd;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="apple-card"]
-  .unit-copy-wrapper
-  .headline {
+.main .promos-section .apple-card .unit-copy-wrapper .headline {
   margin-top: 56px;
 }
 
@@ -848,7 +715,7 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
+  .promos-section
   .unit-image-wrapper
   .unit-image.unit-image-apple-card-tile {
   width: 1262px;
@@ -858,23 +725,16 @@ body {
   background-image: url("https://www.apple.com/v/home/ah/images/promos/apple-card/tile__cauwwcyyn9hy_large.jpg");
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="tv-plus-dickinson-s3"]
-  .unit-wrapper {
+.main .promos-section .tv-plus-dickinson-s3 .unit-wrapper {
   background: #0b0e15;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="tv-plus-dickinson-s3"]
-  .unit-copy-wrapper
-  .headline {
+.main .promos-section .tv-plus-dickinson-s3 .unit-copy-wrapper .headline {
   margin-top: 59px;
 }
 
-[data-module-template] [data-unit-id] .theme-dark .headline,
-[data-module-template] [data-unit-id] .theme-dark .subhead {
+.data-module .data-unit .theme-dark .headline,
+.data-module .data-unit .theme-dark .subhead {
   color: #f5f5f7;
 }
 
@@ -887,11 +747,7 @@ body {
   background-position: center;
 }
 
-.main
-  [data-module-template="promos"]
-  [data-unit-id="tv-plus-dickinson-s3"]
-  .unit-copy-wrapper
-  .tile-copy {
+.main .promos-section .tv-plus-dickinson-s3 .unit-copy-wrapper .tile-copy {
   width: 100%;
   margin-top: 300px;
   margin-bottom: 37px;
@@ -907,7 +763,7 @@ body {
 }
 
 .main
-  [data-module-template="promos"]
+  .promos-section
   .unit-image-wrapper
   .unit-image.unit-image-tv-plus-dickinson-s3-promo-dickinson {
   width: 1262px;
