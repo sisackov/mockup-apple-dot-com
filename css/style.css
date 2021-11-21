@@ -9,20 +9,15 @@
   --content-height: 569px;
   --gutter-width: 12px;
   --gutter-half-width: 6px;
-  --gutter-and-half-width: 18px;
   --gutter-color: #fff;
   --double-edge-border-width: 0px;
   --edge-border-width: 0px;
   --background-color: #fbfbfd;
   --text-color: #1d1d1f;
-  --edge-border-width-fallback: 0px;
   --footer-background: #f5f5f7;
   --footer-border-color: #d2d2d7;
   --footer-text-color: #6e6e73;
-  --footer-link-color: #424245;
-  --footer-directory-title-color: #1d1d1f;
-  --footer-directory-title-color-hover: #000;
-  --footer-mini-shop-link-color: #06c;
+  --a-link-color: #06c;
   --content-height: 580px;
 }
 
@@ -372,6 +367,15 @@ body {
   animation: rotate 4s 0.125s ease-in-out forwards;
 }
 
+@keyframes rotate {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotate(45deg) skew(4deg, 4deg);
+  }
+}
+
 .main
   .heroes-section
   .holiday-2021
@@ -449,23 +453,6 @@ body {
   background-image: url("https://www.apple.com/v/home/ah/images/heroes/holiday-2021/set-c/ipadair__fkr21evsr6a2_large.png");
 }
 
-.icon::before,
-.icon::after,
-.more::before,
-.more::after {
-  /* TODO */
-  font-family: "SF Pro Icons";
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: 1;
-  text-decoration: underline;
-  position: relative;
-  z-index: 1;
-}
-
 .body-with-ribbon .heroes-section.collection-module .data-unit,
 .body-with-ribbon .promos-section.collection-module .data-unit {
   top: initial;
@@ -506,13 +493,11 @@ body {
   --content-height: 580px;
   --gutter-width: 12px;
   --gutter-half-width: 6px;
-  --gutter-and-half-width: 18px;
   --gutter-color: #fff;
   --double-edge-border-width: 24px;
   --edge-border-width: 12px;
   --background-color: #fbfbfd;
   --text-color: #1d1d1f;
-  --edge-border-width-fallback: 12px;
 }
 
 .main .promos-section.collection-module {
@@ -774,6 +759,10 @@ body {
 }
 /* Main END */
 
+.footer__content {
+  color: var(--footer-text-color);
+}
+
 .footer__content--preamble {
   border-bottom: 1px solid var(--footer-border-color);
   padding: 17px 0 11px;
@@ -844,7 +833,7 @@ body {
 }
 
 .footer-content-bottom__shop a {
-  color: var(--footer-mini-shop-link-color);
+  color: var(--a-link-color);
 }
 
 .footer-content-bottom__locale {
