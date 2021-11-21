@@ -25,34 +25,8 @@
   --footer-directory-title-color: #1d1d1f;
   --footer-directory-title-color-hover: #000;
   --footer-mini-shop-link-color: #06c;
-  --r-globalnav-height: 44px;
-  --r-globalnav-segmentbar-height: 0px;
-  --r-globalnav-viewport-large-min-width: 1024px;
-  --r-globalnav-viewport-large-max-width: 1441px;
-  --r-globalnav-viewport-large-query: (min-width: 1024px);
-  --r-globalnav-viewport-medium-min-width: 834px;
-  --r-globalnav-viewport-medium-max-width: 1023px;
-  --r-globalnav-viewport-medium-query: (max-width: 1023px);
-  --r-globalnav-viewport-small-min-width: 420px;
-  --r-globalnav-viewport-small-max-width: 833px;
-  --r-globalnav-viewport-small-query: (max-width: 833px);
-  --r-globalnav-viewport-xsmall-min-width: 320px;
-  --r-globalnav-viewport-xsmall-max-width: 419px;
-  --r-globalnav-viewport-xsmall-query: (max-width: 419px);
-  --r-globalnav-segmentbar-background: #272729;
-  --r-globalnav-segmentbar-text-color: rgba(255, 255, 255, 0.92);
-  --r-globalnav-segmentbar-border-color: rgba(255, 255, 255, 0.24);
   --content-height: 580px;
   --columns: 1;
-  --gutter-width: 12px;
-  --gutter-half-width: 6px;
-  --gutter-and-half-width: 18px;
-  --gutter-color: #fff;
-  --double-edge-border-width: 0px;
-  --edge-border-width: 0px;
-  --background-color: #fbfbfd;
-  --text-color: #1d1d1f;
-  --edge-border-width-fallback: 0px;
 }
 
 * {
@@ -197,6 +171,7 @@ body {
   background-color: #e34140;
   display: grid;
   width: 100%;
+  height: 90px;
   text-align: center;
 }
 
@@ -207,23 +182,9 @@ body {
   width: 100%;
 }
 
-.large-centered {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.large-12 {
+.flex-row--large {
   flex-basis: 100%;
   max-width: 100%;
-}
-
-.column {
-  box-sizing: border-box;
-  margin: 0;
-  margin-right: 0px;
-  margin-left: 0px;
-  padding: 0;
-  min-width: 0px;
 }
 
 .main [data-module-template="ribbon"] [data-unit-id="holiday"] p {
@@ -236,19 +197,12 @@ body {
   font-size: 14px;
 }
 
-.main [data-module-template="ribbon"] [data-unit-id="holiday"] a {
-  display: inline-block;
-}
-
 .main [data-module-template="heroes"].collection-module {
   background-color: var(--gutter-color);
   grid-gap: var(--gutter-width);
   grid-template-columns: repeat(var(--columns), 1fr);
-  width: calc(
-    100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
-      var(--safe-area-inset-rt)
-  );
-  left: calc(var(--edge-border-width) + var(--safe-area-inset-lt));
+  width: calc(100% - var(--double-edge-border-width));
+  left: calc(var(--edge-border-width));
   border-bottom: var(--gutter-width) solid var(--gutter-color);
 }
 
@@ -328,11 +282,15 @@ body {
   z-index: 3;
 }
 
-.body-with-ribbon
+.main
   [data-module-template="heroes"]
-  [data-unit-id]:first-child
-  .unit-copy-wrapper {
-  margin-top: 0;
+  [data-unit-id="holiday-2021"]
+  .unit-copy-wrapper,
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper {
+  background-color: #eeeffe;
 }
 
 .main
@@ -364,7 +322,7 @@ body {
   height: 88px;
   background-size: 70px 88px;
   background-repeat: no-repeat;
-  background-image: url("https://www.apple.com/assets/img/logo__dcojfwkzna2q_medium_2x.png");
+  background-image: url("https://www.apple.com/v/home/ah/images/logos/holiday-2021/logo__dcojfwkzna2q_large.png");
   margin: 0 auto;
 }
 
@@ -590,15 +548,10 @@ body {
 .main [data-module-template="heroes"].collection-module [data-unit-id] {
   border-color: var(--gutter-color);
   background-color: var(--gutter-color);
-  border-bottom-width: var(--gutter-width);
-  height: calc(
-    var(--content-height) + var(--global-nav-collective-height) +
-      var(--gutter-width)
-  );
-  top: calc(var(--global-nav-collective-height) * -1);
-  margin-bottom: calc(
-    (var(--global-nav-collective-height) + var(--gutter-width)) * -1
-  );
+  border-bottom-width: 12px;
+  height: 630px;
+  top: -45px;
+  margin-bottom: -60px;
 }
 
 .main
