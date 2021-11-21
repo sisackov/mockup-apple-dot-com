@@ -42,6 +42,17 @@
   --r-globalnav-segmentbar-background: #272729;
   --r-globalnav-segmentbar-text-color: rgba(255, 255, 255, 0.92);
   --r-globalnav-segmentbar-border-color: rgba(255, 255, 255, 0.24);
+  --content-height: 580px;
+  --columns: 1;
+  --gutter-width: 12px;
+  --gutter-half-width: 6px;
+  --gutter-and-half-width: 18px;
+  --gutter-color: #fff;
+  --double-edge-border-width: 0px;
+  --edge-border-width: 0px;
+  --background-color: #fbfbfd;
+  --text-color: #1d1d1f;
+  --edge-border-width-fallback: 0px;
 }
 
 * {
@@ -224,6 +235,329 @@ body {
   display: inline-block;
 }
 
+.main [data-module-template="heroes"].collection-module {
+  background-color: var(--gutter-color);
+  grid-gap: var(--gutter-width);
+  grid-template-areas: "";
+  grid-template-columns: repeat(var(--columns), 1fr);
+  width: calc(
+    100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
+      var(--safe-area-inset-rt)
+  );
+  left: calc(var(--edge-border-width) + var(--safe-area-inset-lt));
+  border-bottom: var(--gutter-width) solid var(--gutter-color);
+}
+
+.body-with-ribbon
+  [data-module-template="heroes"]
+  [data-unit-id]:first-child
+  .module-content,
+.body-with-ribbon
+  [data-module-template="heroes"]
+  [data-unit-id]:first-child
+  .unit-wrapper {
+  height: var(--content-height);
+}
+
+.main
+  [data-module-template="heroes"].collection-module
+  [data-unit-id]
+  .module-content {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding-top: var(--global-nav-collective-height);
+  height: calc(var(--content-height) + var(--global-nav-collective-height));
+}
+
+.main [data-module-template="heroes"] [data-unit-id],
+.main [data-module-template="heroes"] .module-content {
+  height: 580px;
+}
+
+.main [data-module-template="heroes"] [data-unit-id],
+.main [data-module-template="heroes"] .module-content {
+  width: 100%;
+}
+
+.body-with-ribbon
+  [data-module-template="heroes"]
+  [data-unit-id]:first-child
+  .module-content,
+.body-with-ribbon
+  [data-module-template="heroes"]
+  [data-unit-id]:first-child
+  .unit-wrapper {
+  height: var(--content-height);
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-wrapper.bg-set-c {
+  background-color: #eeeffe;
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper {
+  top: calc(var(--global-nav-collective-height) * -1);
+  height: calc(var(--content-height) + var(--global-nav-collective-height));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fbfbfd;
+  background-color: rgb(251, 251, 253);
+}
+
+.main
+  [data-module-template="heroes"].collection-module
+  [data-unit-id]
+  .module-content {
+  color: var(--text-color);
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper a.unit-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.body-with-ribbon
+  [data-module-template="heroes"]
+  [data-unit-id]:first-child
+  .unit-copy-wrapper {
+  margin-top: 0;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-copy-wrapper {
+  padding-top: 29px;
+}
+
+.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper {
+  text-align: center;
+  padding-top: 47px;
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper .unit-copy-wrapper {
+  position: relative;
+  flex-grow: 0;
+  z-index: 4;
+  pointer-events: none;
+  margin-top: var(--global-nav-collective-height);
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-copy-wrapper
+  .apple-logo {
+  width: 70px;
+  height: 88px;
+  background-size: 70px 88px;
+  background-repeat: no-repeat;
+  background-image: url("/assets/img/logo__dcojfwkzna2q_medium_2x.png");
+  margin: 0 auto;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-copy-wrapper
+  .headline {
+  margin-top: 20px;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > .headline {
+  font-size: 56px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-copy-wrapper
+  .cta-links {
+  margin-top: 9px;
+}
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > .cta-links {
+  position: relative;
+  z-index: 4;
+  text-decoration: none;
+}
+
+.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper > .cta,
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > .cta-links {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1.381;
+  font-weight: 400;
+  letter-spacing: 0.011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 0.65em;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+[data-module-template] [data-unit-id] .unit-wrapper .unit-image-wrapper {
+  z-index: 1;
+  overflow: visible;
+  flex-grow: 1;
+}
+.main [data-module-template="heroes"] .unit-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-wrapper.bg-set-c
+  .set-c {
+  display: flex;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container {
+  position: absolute;
+}
+
+.main [data-module-template="heroes"] .unit-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper:not(.pause)
+  .unit-image-animate {
+  animation: rotate 4s 0.125s ease-in-out forwards;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container
+  .unit-image-animate
+  .unit-image-rotate {
+  transform: rotateZ(-4deg) translate3d(0, 0, 0);
+  margin: 0 4px;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container
+  .unit-image-animate
+  .unit-image-rotate
+  .unit-image {
+  position: relative;
+}
+
+[data-module-template] [data-unit-id] .unit-image {
+  z-index: 1;
+  position: absolute;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  left: calc(50% + 0px);
+  right: auto;
+  bottom: 0px;
+  top: auto;
+  transform: translateX(-50%);
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container.set-c
+  .unit-image-macbook
+  .unit-image {
+  width: 289px;
+  height: 281px;
+  background-size: 289px 281px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/heroes/holiday-2021/set-c/macbook__d0g7o7oqt282_large.png");
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container.set-c
+  .unit-image-ipadmini
+  .unit-image {
+  width: 289px;
+  height: 281px;
+  background-size: 289px 281px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/heroes/holiday-2021/set-c/ipadmini__f0pd6cilwaie_large.png");
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id="holiday-2021"]
+  .unit-image-wrapper
+  .unit-image-container.set-c
+  .unit-image-ipadair
+  .unit-image {
+  width: 289px;
+  height: 281px;
+  background-size: 289px 281px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/heroes/holiday-2021/set-c/ipadair__fkr21evsr6a2_large.png");
+}
+
 .icon::before,
 .icon::after,
 .more::before,
@@ -335,6 +669,8 @@ body {
   margin-top: 21px;
   position: absolute;
 }
+
+TODO
 
 .hero-spinner-1 .unit-image {
   width: 289px;
