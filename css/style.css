@@ -238,7 +238,6 @@ body {
 .main [data-module-template="heroes"].collection-module {
   background-color: var(--gutter-color);
   grid-gap: var(--gutter-width);
-  grid-template-areas: "";
   grid-template-columns: repeat(var(--columns), 1fr);
   width: calc(
     100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
@@ -360,7 +359,7 @@ body {
   height: 88px;
   background-size: 70px 88px;
   background-repeat: no-repeat;
-  background-image: url("/assets/img/logo__dcojfwkzna2q_medium_2x.png");
+  background-image: url("https://www.apple.com/assets/img/logo__dcojfwkzna2q_medium_2x.png");
   margin: 0 auto;
 }
 
@@ -572,6 +571,236 @@ body {
   text-decoration: underline;
   position: relative;
   z-index: 1;
+}
+
+.body-with-ribbon
+  [data-module-template="heroes"].collection-module
+  [data-unit-id],
+.body-with-ribbon
+  [data-module-template="promos"].collection-module
+  [data-unit-id] {
+  top: initial;
+}
+
+.main [data-module-template="heroes"].collection-module [data-unit-id] {
+  border-color: var(--gutter-color);
+  background-color: var(--gutter-color);
+  border-bottom-width: var(--gutter-width);
+  height: calc(
+    var(--content-height) + var(--global-nav-collective-height) +
+      var(--gutter-width)
+  );
+  top: calc(var(--global-nav-collective-height) * -1);
+  margin-bottom: calc(
+    (var(--global-nav-collective-height) + var(--gutter-width)) * -1
+  );
+}
+
+.main
+  [data-module-template="heroes"]
+  .unit-image-wrapper
+  .unit-image.unit-image-iphone-13-pro-hero-iphone-13pro {
+  width: 3010px;
+  height: 624px;
+  background-size: 3010px 624px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13-pro/hero_iphone_13pro__dhnsegysa42u_large.jpg");
+}
+
+.main
+  [data-module-template="heroes"]
+  .unit-image-wrapper
+  .unit-image.unit-image-iphone-13-hero-iphone-13 {
+  width: 3008px;
+  height: 624px;
+  background-size: 3008px 624px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/heroes/iphone-13/hero_iphone_13__f194u1rdooeq_large.jpg");
+}
+
+.main [data-module-template="promos"] {
+  --content-height: 580px;
+  --columns: 2;
+  --gutter-width: 12px;
+  --gutter-half-width: 6px;
+  --gutter-and-half-width: 18px;
+  --gutter-color: #fff;
+  --double-edge-border-width: 24px;
+  --edge-border-width: 12px;
+  --background-color: #fbfbfd;
+  --text-color: #1d1d1f;
+  --edge-border-width-fallback: 12px;
+}
+
+.main [data-module-template="promos"].collection-module {
+  background-color: var(--gutter-color);
+  grid-gap: var(--gutter-width);
+  grid-template-columns: repeat(var(--columns), 1fr);
+  width: calc(
+    100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
+      var(--safe-area-inset-rt)
+  );
+  left: calc(var(--edge-border-width) + var(--safe-area-inset-lt));
+  border-bottom: var(--gutter-width) solid var(--gutter-color);
+}
+
+.main
+  [data-module-template="promos"].collection-module
+  [data-unit-id]
+  .module-content {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding-top: var(--global-nav-collective-height);
+  height: calc(var(--content-height) + var(--global-nav-collective-height));
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .headline {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 53px;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .headline,
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .subhead,
+.main [data-module-template="promos"] [data-unit-id] .unit-copy-wrapper .cta {
+  width: 88%;
+  max-width: 430px;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .subhead {
+  font-size: 21px;
+  line-height: 1.2381;
+  font-weight: 400;
+  letter-spacing: 0.016em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 4px;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id="macbook-pro"]
+  .no-avail
+  .unit-copy-wrapper
+  .cta-links {
+  margin-top: 0.7em;
+}
+.main
+  [data-module-template="promos"]
+  [data-unit-id="macbook-pro"]
+  .unit-copy-wrapper
+  .cta-links {
+  margin-top: 4px;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .cta-links {
+  position: relative;
+  z-index: 4;
+  text-decoration: none;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .cta-links,
+.main [data-module-template="promos"] [data-unit-id] .unit-copy-wrapper .cta {
+  font-size: 17px;
+  line-height: 1.23536;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 0.7em;
+  text-align: center;
+}
+
+.main
+  [data-module-template="promos"]
+  .unit-image-wrapper
+  .unit-image.unit-image-macbook-pro-tile-macbookpro {
+  width: 1262px;
+  height: 580px;
+  background-size: 1262px 580px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/promos/macbook-pro/tile_macbookpro__cx0ur0qg9biq_large.jpg");
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id="watch-series-7"]
+  .unit-copy-wrapper
+  .violator-frameless-reduced {
+  margin-top: 31px;
+}
+.main
+  [data-module-template="promos"]
+  [data-unit-id="watch-series-7"]
+  .violator-frameless.violator-frameless-reduced {
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: block;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id="watch-series-7"]
+  .violator-frameless {
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: block;
+  color: #bf4800;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id="watch-series-7"]
+  .unit-copy-wrapper {
+  text-align: center;
+}
+
+.main
+  [data-module-template="promos"]
+  .unit-image-wrapper
+  .unit-image.unit-image-watch-series-7-tile-watch {
+  width: 1262px;
+  height: 580px;
+  background-size: 1262px 580px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.apple.com/v/home/ah/images/promos/watch-series-7/tile_watch__e9n11b6m6yq2_large.jpg");
 }
 
 /* Main END */
