@@ -139,14 +139,26 @@ body {
   box-sizing: border-box;
 }
 
-.main .module-content .unit-copy-wrapper .cta-links a:hover,
-.main .module-content .unit-copy-wrapper .cta-links .link:hover {
-  text-decoration: underline;
+#mainId .main .module-content .unit-copy-wrapper .cta-links a,
+.main .module-content .unit-copy-wrapper .cta-links .link {
+  z-index: 500;
+  padding-right: 40px;
+  text-decoration: none;
+}
+
+#mainId .main .module-content .unit-copy-wrapper .cta-links a:hover,
+.main
+  .module-content
+  .unit-copy-wrapper
+  .cta-links
+  .link:hover
+  + .cta-links.link {
+  text-decoration: underline !important; /* !nothing works */
 }
 
 .main .data-module:nth-child(1),
 .main .data-unit:nth-child(1) {
-  z-index: 42;
+  z-index: 45;
 }
 
 .main .data-module.collection-module .data-unit {
@@ -299,6 +311,7 @@ body {
 .main .heroes-section .holiday-2021 .unit-copy-wrapper .cta-links {
   margin-top: 9px;
 }
+
 .main .heroes-section .data-unit .unit-copy-wrapper > .cta-links {
   position: relative;
   z-index: 4;
